@@ -1,0 +1,9 @@
+name: SLSJoin
+main: de.lucawimmer.slsjoin.main
+version: 1.0
+description: Display serverstats on serverjoin
+author: magl1te
+commands:
+   slsjoin:
+      description: Reload command
+      usage: /<command>
