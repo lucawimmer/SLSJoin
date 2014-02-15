@@ -10,7 +10,6 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-
 public class main extends JavaPlugin {
 
 	private static final main instance = new main();
@@ -20,6 +19,7 @@ public class main extends JavaPlugin {
 
 	
 	@Override
+        @SuppressWarnings("static-access")
 	public void onEnable() {
 		this.manager = new SimpleConfigManager(this);
 		File file = new File(getDataFolder() + File.separator + "config.yml");
