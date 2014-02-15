@@ -14,12 +14,9 @@ public class main extends JavaPlugin {
 
 	private static final main instance = new main();
 	public SimpleConfigManager manager;
-
 	public static SimpleConfig config;
 
-	
 	@Override
-        @SuppressWarnings("static-access")
 	public void onEnable() {
 		this.manager = new SimpleConfigManager(this);
 		File file = new File(getDataFolder() + File.separator + "config.yml");
@@ -29,7 +26,7 @@ public class main extends JavaPlugin {
 	    	this.config.set("onjoin", "true", "Should the joinmessage displayed when a new player join?");
 	        this.config.set("joinmessage", "&b&l[SLS] &6&lWillkommen {player} auf SkyLands! &7[{counter}]", "Available variables are {online}, {max}, {player}, {displayname}, {time}, {counter}");
 	        this.config.saveConfig();
-			getLogger().info(config.getString("Config erfolgreich generiert"));
+			getLogger().info(config.getString("Configuration created successfully"));
 		} else {
 			this.config = manager.getNewConfig("config.yml");
 		}
@@ -42,7 +39,6 @@ public class main extends JavaPlugin {
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		//String arenaName, Location joinLocation, Location startLocation, Location endLocation, int maxPlayers
 		String prefix = ChatColor.AQUA + "" + ChatColor.BOLD + "[" + "SLS] ";
 		if (cmd.getName().equalsIgnoreCase("slsjoin")) {
 			if (args.length >= 1) {
