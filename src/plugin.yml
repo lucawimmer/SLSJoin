@@ -1,0 +1,10 @@
+name: SLSJoin
+main: de.lucawimmer.slsjoin.main
+version: 1.0
+authors:
+ - magl1te
+description: Lightweight player coutner and announcer
+commands:
+  slsjoin:
+    description: Command to reload the config files or see current stats
+    usage: /slsjoin <reload/stats>
