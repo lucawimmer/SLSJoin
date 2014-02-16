@@ -1,6 +1,7 @@
 package de.lucawimmer.slsjoin;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -32,6 +33,10 @@ public class main extends JavaPlugin {
 		}
     	
 		getServer().getPluginManager().registerEvents(new PlayerListener(), this);
+                try {
+                    Metrics metrics = new Metrics(this);
+                    metrics.start();
+                } catch (IOException e) {}
 	}
 		
 	public static final main getPlugin() {
