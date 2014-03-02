@@ -1,6 +1,7 @@
 package de.lucawimmer.slsjoin;
 
 import java.io.BufferedReader; 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -11,18 +12,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
- 
-import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.plugin.Plugin;
  
 public class SimpleConfigManager {
  
-    private JavaPlugin plugin;
+    private Plugin plugin;
  
     /*
     * Manage custom configurations and files
     */
-    public SimpleConfigManager(JavaPlugin plugin) {
-        this.plugin = plugin;
+    public SimpleConfigManager(Plugin plugin) {
+        this.plugin = main.getPlugin();
     }
  
     /*
@@ -43,7 +43,7 @@ public class SimpleConfigManager {
  
         }
  
-        SimpleConfig config = new SimpleConfig(this.getConfigContent(filePath), file, this.getCommentsNum(file), plugin);
+        SimpleConfig config = new SimpleConfig(this.getConfigContent(filePath), file, this.getCommentsNum(file), main.getPlugin());
         return config;
  
     }

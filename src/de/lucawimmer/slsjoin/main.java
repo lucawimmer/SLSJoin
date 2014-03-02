@@ -22,7 +22,7 @@ public class main extends JavaPlugin {
 		this.manager = new SimpleConfigManager(this);
 		File file = new File(getDataFolder() + File.separator + "config.yml");
 		if(!file.exists()){
-			String[] header = {"SLSJoin", "Developed and written by", "Luca Wimmer (v1.0)", "skylands.eu:25565"};
+		String[] header = {"SLSJoin", "Developed and written by", "Luca Wimmer (v1.0)", "skylands.eu:25565"};
 	    	this.config = manager.getNewConfig("config.yml", header);
 	    	this.config.set("onjoin", "true", "Should the joinmessage displayed when a new player join?");
 	        this.config.set("joinmessage", "&b&l[SLS] &6&lWillkommen {player} auf SkyLands! &7[{counter}]", "Available variables are {online}, {max}, {player}, {displayname}, {time}, {counter}");

@@ -3,6 +3,7 @@ package de.lucawimmer.slsjoin;
 import java.io.File;
 import java.io.InputStream;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
  
 
@@ -16,7 +17,7 @@ import org.bukkit.World;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.plugin.java.JavaPlugin; 
+import org.bukkit.plugin.Plugin;
  
 public class SimpleConfig {
     private int comments;
@@ -25,7 +26,7 @@ public class SimpleConfig {
     private File file;
     private FileConfiguration config;
  
-    public SimpleConfig(InputStream configStream, File configFile, int comments, JavaPlugin plugin) {
+    public SimpleConfig(InputStream configStream, File configFile, int comments, Plugin plugin) {
         this.comments = comments;
         this.manager = new SimpleConfigManager(plugin);
  
